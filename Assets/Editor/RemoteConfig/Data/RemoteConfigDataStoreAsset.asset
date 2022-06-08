@@ -17,13 +17,13 @@ MonoBehaviour:
     \"string\",\r\n      \"value\": \"https://discord.com/api/webhooks/984172523488944209/KzQAbgnhglaDdd2YIUgvt4yWclt5ng1RhW56X88jmK2Gw96WY-yChSWu6TfYsYgvNG75\"\r\n   
     }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"56578475-de3c-43f2-8193-f3a20a609a16\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"game_version\",\r\n      \"type\": \"string\",\r\n     
-    \"value\": \"0.0.17\"\r\n    }\r\n  }\r\n]"
+    \"value\": \"0.0.29\"\r\n    }\r\n  }\r\n]"
   _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"92e53514-d6a5-4b43-8b2a-d39c897b0466\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"discord_webhook_url\",\r\n      \"type\":
     \"string\",\r\n      \"value\": \"https://discord.com/api/webhooks/984172523488944209/KzQAbgnhglaDdd2YIUgvt4yWclt5ng1RhW56X88jmK2Gw96WY-yChSWu6TfYsYgvNG75\"\r\n   
     }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"56578475-de3c-43f2-8193-f3a20a609a16\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"game_version\",\r\n      \"type\": \"string\",\r\n     
-    \"value\": \"0.0.17\"\r\n    }\r\n  }\r\n]"
+    \"value\": \"0.0.29\"\r\n    }\r\n  }\r\n]"
   _environments: "[\r\n  {\r\n    \"projectId\": \"08b57871-0146-481a-b2ec-3f38a5de8e59\",\r\n   
     \"name\": \"production\",\r\n    \"id\": \"3b5713cd-c2e7-4640-975c-213d41531d0b\",\r\n   
     \"isDefault\": true,\r\n    \"createdAt\": \"2022-06-08T16:25:03Z\",\r\n    \"updatedAt\":
