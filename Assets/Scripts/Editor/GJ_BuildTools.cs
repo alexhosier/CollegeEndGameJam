@@ -59,7 +59,7 @@ namespace GJ.Editor
         {
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
             buildPlayerOptions.scenes = new[] { "Assets/Scenes/Server.unity", "Assets/Scenes/Game.unity" };
-            buildPlayerOptions.locationPathName = "Builds/Server/Windows/server.X86_64";
+            buildPlayerOptions.locationPathName = "Builds/Server/Linux/server.x86_64";
             buildPlayerOptions.target = BuildTarget.StandaloneLinux64;
             buildPlayerOptions.options = BuildOptions.EnableHeadlessMode;
 
