@@ -16,12 +16,15 @@ namespace GJ.Networking
 
         private string discordWebhookURL = "";
 
+        // Called before first frame
         private void Awake()
         {
+            // Fetch the Discord webhook url from the remote config
             ConfigManager.FetchCompleted += SetDiscordWebhookURL;
             ConfigManager.FetchConfigs<UserAttributes, AppAttributes>(new UserAttributes(), new AppAttributes());
         }
 
+        // Callback for FetchCompleted event
         private void SetDiscordWebhookURL(ConfigResponse response)
         {
             discordWebhookURL = ConfigManager.appConfig.GetString("discord_webhook_url");
