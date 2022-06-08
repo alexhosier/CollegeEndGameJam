@@ -9,17 +9,6 @@ namespace GJ.Networking
 {
     public class GJ_NetworkManager : NetworkManager
     {
-        
-        // Called on first frame
-        public override void Start()
-        {
-            // Use the default implementation
-            base.Start();
-
-            // Start the update coroutine
-            StartCoroutine(SendUpdateWebhook());
-        }
-
         // When the client connects to the server
         public override void OnServerAddPlayer(NetworkConnectionToClient conn)
         {
@@ -49,8 +38,11 @@ namespace GJ.Networking
                 PlayerPrefs.SetString("Server_Instance", serverInstance);
             }
 
-            // Send the webhook
+            // Send the starting webhook
             StartCoroutine(SendStartingWebhook());
+            
+            // Send the update webhook
+            StartCoroutine(SendUpdateWebhook());
         }
 
         // When the server stops
