@@ -13,13 +13,13 @@ public class GJ_MainMenuController : MonoBehaviour
     [SerializeField] private GameObject usernamePanel;
     [SerializeField] private TMP_InputField usernameInput;
     
-    public struct userAttributes {}
-    public struct appAttributes {}
+    private struct UserAttributes {}
+    private struct AppAttributes {}
 
     private void Awake()
     {
         ConfigManager.FetchCompleted += SetVersionText;
-        ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
+        ConfigManager.FetchConfigs<UserAttributes, AppAttributes>(new UserAttributes(), new AppAttributes());
     }
 
     // Start is called before the first frame update
