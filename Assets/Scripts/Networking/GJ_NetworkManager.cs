@@ -3,12 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using Mirror;
+using Unity.RemoteConfig;
 using UnityEngine.Profiling;
 
 namespace GJ.Networking
 {
     public class GJ_NetworkManager : NetworkManager
     {
+        // Variables
+        public struct userAttributes {}
+        public struct appAttributes {}
+
+        private string discordWebhookURL = "";
+
+        private void Awake()
+        {
+            ConfigManager.FetchCompleted += SetDiscordWebhookURL;
+            ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
+        }
+
+        private void SetDiscordWebhookURL(ConfigResponse response)
+        {
+            discordWebhookURL = ConfigManager.appConfig.GetString("discord_webhook_url");
+        }
+        
         // When the client connects to the server
         public override void OnServerAddPlayer(NetworkConnectionToClient conn)
         {
@@ -67,7 +85,7 @@ namespace GJ.Networking
             form.AddField("content", $"Server **{PlayerPrefs.GetString("Server_Instance")}** / **Clients:** {numPlayers} / **RAM Allocated:** {Profiler.GetTotalAllocatedMemoryLong()/1024/1024}MB");
             
             // Create a post request for discord
-            using (UnityWebRequest www = UnityWebRequest.Post("https://discord.com/api/webhooks/984072238745653328/BqutJJ6tYMVIJiTeb_IfOvcbIc_DK9mgv0Tu8JKJG-P5rd0mSVMl3uwso7Y2JREUxQuD", form))
+            using (UnityWebRequest www = UnityWebRequest.Post(discordWebhookURL, form))
             {
                 // Send the web request
                 yield return www.SendWebRequest();
@@ -92,7 +110,7 @@ namespace GJ.Networking
             form.AddField("content", $"Server **{PlayerPrefs.GetString("Server_Instance")}** starting / **OS:** {SystemInfo.operatingSystem} / **RAM:** {SystemInfo.systemMemorySize/1000}GB");
 
             // Create a post request for discord
-            using (UnityWebRequest www = UnityWebRequest.Post("https://discord.com/api/webhooks/984072238745653328/BqutJJ6tYMVIJiTeb_IfOvcbIc_DK9mgv0Tu8JKJG-P5rd0mSVMl3uwso7Y2JREUxQuD", form))
+            using (UnityWebRequest www = UnityWebRequest.Post(discordWebhookURL, form))
             {
                 // Send the web request
                 yield return www.SendWebRequest();
@@ -114,7 +132,7 @@ namespace GJ.Networking
             form.AddField("content", $"Server **{PlayerPrefs.GetString("Server_Instance")}** stopping!");
 
             // Create a post request for discord
-            using (UnityWebRequest www = UnityWebRequest.Post("https://discord.com/api/webhooks/984072238745653328/BqutJJ6tYMVIJiTeb_IfOvcbIc_DK9mgv0Tu8JKJG-P5rd0mSVMl3uwso7Y2JREUxQuD", form))
+            using (UnityWebRequest www = UnityWebRequest.Post(discordWebhookURL, form))
             {
                 // Send the web request
                 yield return www.SendWebRequest();
