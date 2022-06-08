@@ -1405,7 +1405,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1021874981}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1741769688}
+        m_TargetAssemblyTypeName: Mirror.NetworkManager, Mirror
+        m_MethodName: StartClient
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1021874981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2002,6 +2014,8 @@ GameObject:
   - component: {fileID: 1741769688}
   - component: {fileID: 1741769687}
   - component: {fileID: 1741769690}
+  - component: {fileID: 1741769692}
+  - component: {fileID: 1741769691}
   m_Layer: 0
   m_Name: Network Manager
   m_TagString: Untagged
@@ -2018,26 +2032,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1741769686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
+  m_Script: {fileID: 11500000, guid: 929e3234c7db540b899f00183fc2b1fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Port: 7777
-  DualMode: 1
-  NoDelay: 1
-  Interval: 10
-  Timeout: 10000
-  FastResend: 2
-  CongestionWindow: 0
-  SendWindowSize: 4096
-  ReceiveWindowSize: 4096
-  MaxRetransmit: 40
-  NonAlloc: 1
-  MaximizeSendReceiveBuffersToOSLimit: 1
-  ReliableMaxMessageSize: 298449
-  UnreliableMaxMessageSize: 1199
-  debugLog: 0
-  statisticsGUI: 0
-  statisticsLog: 0
+  transports:
+  - {fileID: 1741769692}
+  - {fileID: 1741769691}
 --- !u!114 &1741769688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2063,7 +2063,8 @@ MonoBehaviour:
   playerPrefab: {fileID: 3394428314355011090, guid: d5bea58b7fcfb134f8bb16b99c723c20, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
-  spawnPrefabs: []
+  spawnPrefabs:
+  - {fileID: 6020368275122895205, guid: fa23e32450687794195b7f5b29770a4c, type: 3}
 --- !u!4 &1741769689
 Transform:
   m_ObjectHideFlags: 0
@@ -2092,6 +2093,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offsetX: 0
   offsetY: 0
+--- !u!114 &1741769691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741769686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0110f245bfcfc7d459681f7bd9ebc590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  port: 7778
+  maxMessageSize: 16384
+  handshakeMaxSize: 3000
+  noDelay: 1
+  sendTimeout: 5000
+  receiveTimeout: 20000
+  serverMaxMessagesPerTick: 10000
+  clientMaxMessagesPerTick: 1000
+  batchSend: 1
+  waitBeforeSend: 0
+  clientUseWss: 0
+  sslEnabled: 0
+  sslCertJson: ./cert.json
+  sslProtocols: 3072
+  _logLevels: 0
+--- !u!114 &1741769692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741769686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Port: 7777
+  DualMode: 1
+  NoDelay: 1
+  Interval: 10
+  Timeout: 10000
+  FastResend: 2
+  CongestionWindow: 0
+  SendWindowSize: 4096
+  ReceiveWindowSize: 4096
+  MaxRetransmit: 40
+  NonAlloc: 1
+  MaximizeSendReceiveBuffersToOSLimit: 1
+  ReliableMaxMessageSize: 298449
+  UnreliableMaxMessageSize: 1199
+  debugLog: 0
+  statisticsGUI: 0
+  statisticsLog: 0
 --- !u!1 &1779642497
 GameObject:
   m_ObjectHideFlags: 0
