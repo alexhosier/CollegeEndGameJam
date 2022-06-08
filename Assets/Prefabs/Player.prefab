@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3394428314355011092}
   - component: {fileID: 3394428314355011091}
   - component: {fileID: 7260735639215315856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
+  playerName: 
   playerNameText: {fileID: 2353913276774997949}
   characterController: {fileID: 3394428314355011092}
 --- !u!1 &4892208902914306119
@@ -164,7 +165,7 @@ GameObject:
   - component: {fileID: 1101002773339501143}
   - component: {fileID: 9039447628811843775}
   - component: {fileID: 145949865306542844}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +264,7 @@ GameObject:
   - component: {fileID: 7486472155159101424}
   - component: {fileID: 4290907703335986069}
   - component: {fileID: 2353913276774997949}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text_PlayerName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
