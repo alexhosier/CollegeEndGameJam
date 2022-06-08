@@ -11,15 +11,15 @@ namespace GJ.Networking
     public class GJ_NetworkManager : NetworkManager
     {
         // Variables
-        public struct userAttributes {}
-        public struct appAttributes {}
+        private struct UserAttributes {}
+        private struct AppAttributes {}
 
         private string discordWebhookURL = "";
 
         private void Awake()
         {
             ConfigManager.FetchCompleted += SetDiscordWebhookURL;
-            ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
+            ConfigManager.FetchConfigs<UserAttributes, AppAttributes>(new UserAttributes(), new AppAttributes());
         }
 
         private void SetDiscordWebhookURL(ConfigResponse response)
@@ -46,8 +46,10 @@ namespace GJ.Networking
                 // For later use
                 var serverInstance = "#";
 
+                // Generate four characters
                 for (int i = 0; i < 5; i++)
                 {
+                    // Random character
                     char c = (char)('A' + Random.Range(0, 26));
                     serverInstance += c;
                 }
