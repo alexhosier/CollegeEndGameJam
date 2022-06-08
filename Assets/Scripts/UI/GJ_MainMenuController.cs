@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.RemoteConfig;
 using TMPro;
 
 public class GJ_MainMenuController : MonoBehaviour
@@ -10,9 +12,18 @@ public class GJ_MainMenuController : MonoBehaviour
     [SerializeField] private TMP_Text versionText;
     [SerializeField] private GameObject usernamePanel;
     [SerializeField] private TMP_InputField usernameInput;
+    
+    public struct userAttributes {}
+    public struct appAttributes {}
+
+    private void Awake()
+    {
+        ConfigManager.FetchCompleted += SetVersionText;
+        ConfigManager.FetchConfigs<userAttributes, appAttributes>(new userAttributes(), new appAttributes());
+    }
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         // Check if the user has not set a name
         if(!PlayerPrefs.HasKey("Player_Username"))
@@ -22,6 +33,11 @@ public class GJ_MainMenuController : MonoBehaviour
         }
     }
 
+    private void SetVersionText(ConfigResponse response)
+    {
+        versionText.text = ConfigManager.appConfig.GetString("game_version");
+    }
+    
     // Setup the users username
     public void SetUsername()
     {
