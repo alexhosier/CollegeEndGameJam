@@ -12,20 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"e746d42b-9172-4c43-b401-4a0be1a2b3d4\"\r\n   
-    },\r\n    \"rs\": {\r\n      \"key\": \"discord_webhook_url\",\r\n      \"value\":
-    \"https://discord.com/api/webhooks/984132632122122280/gQyD5qfm74WzrqC3jFDYUBUSn_KIfd9uy67V-_xUbN5mGBG8D5fAWVqDaXmpmBBtnCez\",\r\n     
-    \"type\": \"string\"\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n     
-    \"entityId\": \"05757091-bb5c-4658-b9c2-3dd3822eb707\"\r\n    },\r\n    \"rs\":
-    {\r\n      \"key\": \"game_version\",\r\n      \"value\": \"0.0.10\",\r\n     
-    \"type\": \"string\"\r\n    }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"e746d42b-9172-4c43-b401-4a0be1a2b3d4\"\r\n   
-    },\r\n    \"rs\": {\r\n      \"key\": \"discord_webhook_url\",\r\n      \"value\":
-    \"https://discord.com/api/webhooks/984132632122122280/gQyD5qfm74WzrqC3jFDYUBUSn_KIfd9uy67V-_xUbN5mGBG8D5fAWVqDaXmpmBBtnCez\",\r\n     
-    \"type\": \"string\"\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n     
-    \"entityId\": \"05757091-bb5c-4658-b9c2-3dd3822eb707\"\r\n    },\r\n    \"rs\":
-    {\r\n      \"key\": \"game_version\",\r\n      \"value\": \"0.0.10\",\r\n     
-    \"type\": \"string\"\r\n    }\r\n  }\r\n]"
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"92e53514-d6a5-4b43-8b2a-d39c897b0466\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"discord_webhook_url\",\r\n      \"type\":
+    \"string\",\r\n      \"value\": \"https://discord.com/api/webhooks/984172523488944209/KzQAbgnhglaDdd2YIUgvt4yWclt5ng1RhW56X88jmK2Gw96WY-yChSWu6TfYsYgvNG75\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"56578475-de3c-43f2-8193-f3a20a609a16\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"game_version\",\r\n      \"type\": \"string\",\r\n     
+    \"value\": \"0.0.17\"\r\n    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"92e53514-d6a5-4b43-8b2a-d39c897b0466\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"discord_webhook_url\",\r\n      \"type\":
+    \"string\",\r\n      \"value\": \"https://discord.com/api/webhooks/984172523488944209/KzQAbgnhglaDdd2YIUgvt4yWclt5ng1RhW56X88jmK2Gw96WY-yChSWu6TfYsYgvNG75\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"56578475-de3c-43f2-8193-f3a20a609a16\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"game_version\",\r\n      \"type\": \"string\",\r\n     
+    \"value\": \"0.0.17\"\r\n    }\r\n  }\r\n]"
   _environments: "[\r\n  {\r\n    \"projectId\": \"08b57871-0146-481a-b2ec-3f38a5de8e59\",\r\n   
     \"name\": \"production\",\r\n    \"id\": \"3b5713cd-c2e7-4640-975c-213d41531d0b\",\r\n   
     \"isDefault\": true,\r\n    \"createdAt\": \"2022-06-08T16:25:03Z\",\r\n    \"updatedAt\":
