@@ -82,7 +82,7 @@ namespace GJ.Editor
         {
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions();
             buildPlayerOptions.scenes = new[] { "Assets/Scenes/Client.unity", "Assets/Scenes/Game.unity" };
-            buildPlayerOptions.locationPathName = "Builds/Client/Windows/client.exe";
+            buildPlayerOptions.locationPathName = "Builds/Client/WebGL/";
             buildPlayerOptions.target = BuildTarget.WebGL;
             buildPlayerOptions.options = BuildOptions.None;
 
